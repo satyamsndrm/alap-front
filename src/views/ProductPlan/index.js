@@ -1,27 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useGetProductPlans } from '../../hooks/useProductPlan';
-import { DataGrid } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
 import { DASHBOARD_PATH } from '../../routes/dashboard';
+import { CustomDataTablePage } from '../../components/CustomDataGrid';
 
 export default function ProductPlan() {
   const { data, isLoading } = useGetProductPlans();
   const navigate = useNavigate();
   const windowWidth = window.innerWidth;
 
-  const rows = [
-    // {
-    //   id: '06567bed-f157-4f79-8613-63e8b4ac8ee0',
-    //   projectName: 'Any Project',
-    //   summary: 'some summary',
-    //   status: 'pending',
-    //   member: 'some long teext',
-    //   start_date: '20th dec',
-    //   end_date: '25th dec',
-    //   createdAt: '2023-03-04T12:02:41.000Z',
-    //   updatedAt: '2023-03-04T12:02:41.000Z',
-    // },
-  ];
+  const rows = [];
   const [dataRows, setDataRows] = useState(rows);
   const totalCol = 9;
   const columns = [
@@ -65,7 +53,7 @@ export default function ProductPlan() {
   return (
     <main className='main-content mt-1 border-radius-lg '>
       <div className='container-fluid'>
-        <div className='row'>
+        {/* <div className='row'>
           <div className='col'>
             <h5 className=' text-secondary fw-bolder'>Product Plan</h5>
           </div>
@@ -91,6 +79,9 @@ export default function ProductPlan() {
               >
                 <div style={{ height: '80vh', width: '100%' }}>
                   <DataGrid
+                    // getRowId={(row) => {
+                    //   return row.projectName;
+                    // }}
                     rows={dataRows}
                     columns={columns}
                     loading={isLoading}
@@ -99,7 +90,17 @@ export default function ProductPlan() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        <CustomDataTablePage
+          {...{
+            pageTitle: 'Product Plan',
+            buttonTitle: 'Add Product Plan',
+            buttonOnClick: () => navigate(DASHBOARD_PATH.CreateProductPlan),
+            dataRows,
+            columns,
+            isLoading,
+          }}
+        />
       </div>
     </main>
   );

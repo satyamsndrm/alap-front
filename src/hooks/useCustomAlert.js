@@ -11,3 +11,8 @@ export default function useCustomAlert() {
   };
   return { showSuccess, showError };
 }
+
+export const useDefaultSucces = ({}) => {
+  const { showSuccess } = useCustomAlert();
+  showSuccess('SuccessFul');
+};

@@ -10,6 +10,8 @@ import PestleAnalysis from '../views/PestleAnalysis';
 import BusinessPlan from '../views/BusinessPlan';
 import NoteBook from '../views/NoteBook';
 import Documents from '../views/Documents';
+import InvestorsData from '../views/Investors/dataTable';
+import BusinessModelsData from '../views/BusinessModel/dataTable';
 
 export const DASHBOARD_PATH = {
   Dashboard: '/dashboard',
@@ -18,8 +20,12 @@ export const DASHBOARD_PATH = {
   Tasks: '/tasks',
   Calendar: '/calendar',
   IdeationCanvas: '/ideation-canvas',
+
   Investors: '/investors',
+  CreateInvestor: '/investors/create',
+
   BusinessModels: '/business-models',
+  CreateBusinessModels: '/business-models/create',
   Swot: '/swot',
   Pest: '/pest-analysis',
   Pestle: '/pestle-analysis',
@@ -54,12 +60,20 @@ export const dashboardRoutes = [
     component: <DashBoard />,
   },
   {
-    path: DASHBOARD_PATH.Investors,
+    path: DASHBOARD_PATH.CreateInvestor,
     component: <Investors />,
   },
   {
-    path: DASHBOARD_PATH.BusinessModels,
+    path: DASHBOARD_PATH.Investors,
+    component: <InvestorsData />,
+  },
+  {
+    path: DASHBOARD_PATH.CreateBusinessModels,
     component: <BusinessModel />,
+  },
+  {
+    path: DASHBOARD_PATH.BusinessModels,
+    component: <BusinessModelsData />,
   },
   {
     path: DASHBOARD_PATH.Swot,
