@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React from 'react';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import JwtProvider from './providers/JwtProvider';
+import { SnackbarProvider } from 'notistack';
+import DashboardLayout from './layout/dashboard';
+import { dashboardRoutes } from './routes/dashboard';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-function App() {
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      retry: 2,
+    },
+  },
+});
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <QueryClientProvider client={queryClient}>
+      <HashRouter>
+        <SnackbarProvider
+          maxSnack={2}
+          anchorOrigin={{ horizontal: 'top', vertical: 'right' }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Routes>
+            <Route path={'/'} element={<DashboardLayout />}>
+              {dashboardRoutes.map((item, index) => (
+                <Route key={index} path={item.path} element={item.component} />
+              ))}
+            </Route>
+          </Routes>
+        </SnackbarProvider>
+      </HashRouter>
+    </QueryClientProvider>
   );
 }
 
-export default App;
+// function App() {
+//   return (
+//     <>
+//       <NavBar />
+//       <DashBoard />
+//       {/* <ProductPlan /> */}
+//     </>
+//   );
+// }

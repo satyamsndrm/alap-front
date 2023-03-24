@@ -1,0 +1,19 @@
+.form-wrapper .form-row {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+}
+.form-wrapper .form-button {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.form-button .form-button-item {
+  padding-left: 10px;
+}
+.form-row .form-row-item {
+  flex: 1;
+  width: 100%;
+  padding-left: 10px;
+}
