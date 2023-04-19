@@ -20,6 +20,11 @@ export default function BusinessModelsData() {
       width: windowWidth / totalCol,
     },
     {
+      field: 'partners',
+      headerName: 'partners',
+      width: windowWidth / totalCol,
+    },
+    {
       field: 'createdAt',
       headerName: 'CreatedAt',
       width: windowWidth / totalCol,
