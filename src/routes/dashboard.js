@@ -12,6 +12,10 @@ import NoteBook from '../views/NoteBook';
 import Documents from '../views/Documents';
 import InvestorsData from '../views/Investors/dataTable';
 import BusinessModelsData from '../views/BusinessModel/dataTable';
+import Profile from '../views/Profile';
+import Users from '../views/Users';
+import MyPlan from '../views/MyPlan';
+import Settings from '../views/Settings';
 
 export const DASHBOARD_PATH = {
   Dashboard: '/dashboard',
@@ -32,6 +36,11 @@ export const DASHBOARD_PATH = {
   BusinessPlans: '/business-plans',
   Notebook: '/notebook',
   Documents: '/documents',
+
+  Profile: '/profile',
+  Users: '/users',
+  MyPlan: '/my-plan',
+  Settings: '/settings',
 };
 
 export const dashboardRoutes = [
@@ -98,5 +107,21 @@ export const dashboardRoutes = [
   {
     path: DASHBOARD_PATH.Documents,
     component: <Documents />,
+  },
+  {
+    path: DASHBOARD_PATH.Profile,
+    component: <Profile />,
+  },
+  {
+    path: DASHBOARD_PATH.Users,
+    component: <Users />,
+  },
+  {
+    path: DASHBOARD_PATH.MyPlan,
+    component: <MyPlan />,
+  },
+  {
+    path: DASHBOARD_PATH.Settings,
+    component: <Settings />,
   },
 ];

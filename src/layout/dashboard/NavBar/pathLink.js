@@ -291,6 +291,96 @@ export const KNOWLEDGEBASE_LINKS = [
   },
 ];
 
+export const ACCOUNT_PAGES_LINKS = [
+  {
+    name: 'Profile',
+    link: DASHBOARD_PATH.Profile,
+    SvgLogo: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        class='feather feather-user'
+      >
+        <path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path>
+        <circle cx='12' cy='7' r='4'></circle>
+      </svg>
+    ),
+  },
+  {
+    name: 'Users',
+    link: DASHBOARD_PATH.Users,
+    SvgLogo: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        class='feather feather-database'
+      >
+        <ellipse cx='12' cy='5' rx='9' ry='3'></ellipse>
+        <path d='M21 12c0 1.66-4 3-9 3s-9-1.34-9-3'></path>
+        <path d='M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5'></path>
+      </svg>
+    ),
+  },
+];
+export const SETTINGS_LINKS = [
+  {
+    name: 'My Plan',
+    link: DASHBOARD_PATH.MyPlan,
+    SvgLogo: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        class='feather feather-shopping-cart'
+      >
+        <circle cx='9' cy='21' r='1'></circle>
+        <circle cx='20' cy='21' r='1'></circle>
+        <path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'></path>
+      </svg>
+    ),
+  },
+  {
+    name: 'Settings',
+    link: DASHBOARD_PATH.Settings,
+    SvgLogo: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='20'
+        height='24'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        class='feather feather-command'
+      >
+        <path d='M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z'></path>
+      </svg>
+    ),
+  },
+];
+
 export const ALL_LINKS = [
   {
     name: undefined,
@@ -315,5 +405,13 @@ export const ALL_LINKS = [
   {
     name: 'KNOWLEDGEBASE',
     linkArray: KNOWLEDGEBASE_LINKS,
+  },
+  {
+    name: 'ACCOUNT PAGES',
+    linkArray: ACCOUNT_PAGES_LINKS,
+  },
+  {
+    name: 'SETTINGS',
+    linkArray: SETTINGS_LINKS,
   },
 ];
